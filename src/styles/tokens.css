@@ -1,0 +1,31 @@
+:root {
+  /* Brand Colors */
+  --color-primary: #2663eb;
+  --color-primary-hover: #2d41a8; /* Slightly darker for button hovers */
+  
+  /* Background & Surface */
+  --color-bg-main: #f8fafc; /* Very light cool gray */
+  --color-surface: #ffffff;
+  
+  /* Typography Colors */
+  --color-text-primary: #0f172a; /* Dark slate for headings */
+  --color-text-secondary: #64748b; /* Lighter slate for paragraphs */
+  
+  /* Borders & Dividers */
+  --color-border: #e2e8f0;
+
+  /* Spacing */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  /* Border Radius */
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease-in-out;
+}
