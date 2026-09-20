@@ -1,3 +1,4 @@
+import Features from '../sections/Features/Features';
 import Hero from '../sections/Hero/Hero';
 import Navbar from '../sections/Navbar/Navbar';
 
@@ -6,6 +7,7 @@ function Home() {
     <main>
       <Navbar />
       <Hero />
+      <Features />
       
       
       <section id="features" style={{ height: '100vh', background: '#fff', padding: '100px' }}>

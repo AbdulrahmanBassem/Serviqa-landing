@@ -1,0 +1,208 @@
+.featuresSection {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--color-surface); /* White background to contrast the Hero section */
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+/* --- Header --- */
+.header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* --- Standard Features Grid --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.card {
+  background-color: var(--color-bg-main);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+}
+
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #eef2ff;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  color: var(--color-primary);
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* --- Highlighted AI Feature --- */
+.aiHighlightCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); /* Dark slate gradient */
+  border-radius: 24px;
+  padding: 5rem;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
+}
+
+.aiContent {
+  position: relative;
+  z-index: 2;
+  max-width: 60%;
+}
+
+.aiBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(59, 83, 209, 0.2);
+  color: #818cf8; /* Light indigo */
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  border: 1px solid rgba(129, 140, 248, 0.3);
+}
+
+.aiTitle {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: var(--spacing-md);
+  letter-spacing: -0.01em;
+}
+
+.aiDescription {
+  font-size: 1.125rem;
+  color: #94a3b8; /* Slate 400 */
+  line-height: 1.6;
+}
+
+.aiVisual {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Abstract AI Graphic using CSS */
+.aiOrbCore {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, var(--color-primary) 0%, #3b53d1 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 60px var(--color-primary);
+  z-index: 2;
+}
+
+.aiOrbRing {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border: 2px dashed var(--color-primary);
+  border-radius: 50%;
+  animation: spin 20s linear infinite;
+  z-index: 1;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .aiHighlightCard {
+    flex-direction: column;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .aiContent {
+    max-width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .aiVisual {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aiTitle {
+    font-size: 1.75rem;
+  }
+}
