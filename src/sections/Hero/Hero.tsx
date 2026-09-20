@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./Hero.module.css";
 
-import dashboardMain from "../../assets/dashboard.png";
+import dashboardMain from "../../assets/dashboard 2.png";
 import dashboardOverlap from "../../assets/kanban.png";
 
 function Hero() {
