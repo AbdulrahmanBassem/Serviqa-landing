@@ -7,13 +7,7 @@ function Home() {
     <main>
       <Navbar />
       <Hero />
-      <Features />
-      
-      
-      <section id="features" style={{ height: '100vh', background: '#fff', padding: '100px' }}>
-        <h2>Features Section</h2>
-      </section>
-      
+      <Features />      
       <section id="how-it-works" style={{ height: '100vh', padding: '100px' }}>
         <h2>How It Works Section</h2>
       </section>

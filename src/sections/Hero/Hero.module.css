@@ -5,8 +5,8 @@
   align-items: center;
   background-color: var(--color-bg-main);
   overflow: hidden; 
-  /* padding-top: 140px;  */
-  /* padding-bottom: var(--spacing-xl); */
+  padding-top: 140px; 
+  padding-bottom: var(--spacing-xl);
 }
 
 /* --- Ambient Background Glows --- */
