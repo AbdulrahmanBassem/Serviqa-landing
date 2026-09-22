@@ -142,7 +142,7 @@ function Features() {
             </div> */}
             <h3 className={styles.aiTitle}>Meet Your AI Shop Assistant</h3>
             <p className={styles.aiDescription}>
-              Supercharge your workflow with an intelligent digital advisor. Instantly retrieve complex part numbers, generate accurate repair estimates, and summarize vehicle histories in seconds—leaving you free to focus on what you do best.
+              Supercharge your workflow with an intelligent digital advisor. Instantly retrieve complex part numbers, generate accurate repair estimates, and summarize vehicle histories in seconds, leaving you free to focus on what you do best.
             </p>
             
             <Link to="/contact" className={styles.aiCtaBtn}>

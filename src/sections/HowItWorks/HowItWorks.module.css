@@ -1,0 +1,270 @@
+.section {
+  background-color: #ffffff;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+/* --- Header --- */
+.header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: var(--spacing-md);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* --- Layout --- */
+.layout {
+  display: grid;
+  grid-template-columns: 4fr 6fr; 
+  gap: 4rem;
+  position: relative;
+}
+
+/* --- Left Column (Timeline) --- */
+.timelineColumn {
+  position: relative;
+  padding-top: 10vh;
+  padding-bottom: 20vh;
+}
+
+.trackLine {
+  position: absolute;
+  top: 10vh;
+  bottom: 20vh;
+  left: 16px; /* Centers the line with the dots */
+  width: 2px;
+  background-color: #e2e8f0;
+  z-index: 1;
+}
+
+.trackProgress {
+  width: 100%;
+  background-color: var(--color-primary);
+  transition: height 0.5s ease;
+}
+
+.stepsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15vh; /* Large gap to force scrolling */
+}
+
+.stepBlock {
+  position: relative;
+  display: flex;
+  gap: 3rem;
+  opacity: 0.4;
+  transform: translateX(-10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  min-height: 40vh; /* Ensures enough scroll room per step */
+}
+
+.activeStep {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.pastStep {
+  opacity: 0.6;
+  transform: translateX(0);
+}
+
+/* Timeline Dot */
+.stepDot {
+  position: relative;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 2px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.4s ease;
+}
+
+.stepDotInner {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.4s ease, transform 0.4s ease;
+}
+
+.activeStep .stepDot {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 6px rgba(59, 83, 209, 0.1);
+}
+
+.activeStep .stepDotInner, .pastStep .stepDotInner {
+  background-color: var(--color-primary);
+}
+
+/* Step Content */
+.stepContent {
+  padding-top: 2px; /* Aligns text with the dot */
+}
+
+.stepNumber {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.stepTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.stepDescription {
+  font-size: 1.125rem;
+  color: #475569;
+  line-height: 1.7;
+}
+
+/* Mobile Image Fallback */
+.mobileImageWrapper {
+  display: none;
+}
+
+/* --- Right Column (Sticky Visual) --- */
+.visualColumn {
+  position: relative;
+  height: 100%;
+}
+
+.stickyContainer {
+  position: sticky;
+  top: 15vh; /* Distance from top of screen */
+  height: calc(100vh - 30vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageCard {
+  position: relative;
+  width: 100%;
+  /* Standard 16:9 desktop ratio. If your images are a different shape, adjust this (e.g., 16/10) */
+  aspect-ratio: 16 / 9; 
+  background-color: transparent; 
+  border-radius: 16px;
+  overflow: hidden;
+  /* Optional: Remove box-shadow/border if your images already have their own styling */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.crossfadeImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* 'contain' ensures the image is NEVER cropped. If you want it to fill the box entirely without white space, change this back to 'cover' */
+  object-fit: contain; 
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-out;
+}
+
+.visibleImg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .visualColumn {
+    display: none; /* Hide sticky column on tablet/mobile */
+  }
+
+  .timelineColumn {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .trackLine {
+    top: 0;
+    bottom: 0;
+  }
+
+  .stepsWrapper {
+    gap: 4rem;
+  }
+
+  .stepBlock {
+    min-height: auto;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .stepDot {
+    border-color: var(--color-primary);
+  }
+
+  .stepDotInner {
+    background-color: var(--color-primary);
+  }
+
+  .mobileImageWrapper {
+    display: block;
+    margin-top: 2rem;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  }
+
+  .mobileImage {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .stepTitle {
+    font-size: 1.5rem;
+  }
+  
+  .stepBlock {
+    gap: 1.5rem;
+  }
+}
